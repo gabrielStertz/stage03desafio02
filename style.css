@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  font-size: 62.5%;
+  --ff-heading: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', sans-serif;
+  --fs-title: 4.0rem;
+  --fs-text: 2rem;
+  --fs-tag: 2rem;
+  --lh-tilte: 3.4rem;
+  --lh-text: 75%;
+  --lh-tag: 34px;
+  --fw-geral: 400;
+  --bg-header: hsl(232, 17%, 35%);
+  --bg-header-title: hsl(275, 18%, 79%);
+  --bg-body: hsl(233, 100%, 97%);
+  --bg-tag: hsl(312, 91%, 96%);
+  --tc-header-title: hsl(0, 0%, 100%);
+  --tc-text: hsl(274, 84%, 12%);
+  --tc-tag: hsl(232, 17%, 35%);
+
+}
+body{
+  background: var(--bg-body);
+  font-weight: var(--fw-geral);
+}
+
+header{
+  width: 100vw;
+  height: 27.9rem;
+  background: var(--bg-header);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+header p, .tag{
+  font-family: var(--ff-heading);
+}
+header img{
+  margin: 3.2rem auto;
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+header p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.9rem;
+  background: var(--bg-header-title);
+  font-size: var(--fs-title);
+  line-height: var(--lh-tilte);
+  color: var(--tc-header-title);
+  margin-bottom: 2.9rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.05em;
+}
+main{
+  width: 32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+main p{
+  text-align: center;
+  font-family: var(--ff-text);
+  font-size: var(--fs-text);
+  line-height: var(--lh-text);
+  color: var(--tc-text);
+  margin: 1.4rem auto 6.3rem;
+}
+.cards{
+  display: grid;
+  gap: 3.6rem;
+  margin-bottom: 6rem;
+}
+.card{
+  position: relative;
+
+}
+.card img{
+  width: 100%;
+  height: 41.6rem;
+  object-fit: cover;
+  border-radius: 2rem;
+  transition: all 200ms;
+  filter: brightness(0.5);
+  animation: downtop 1s;
+}
+.card img:hover{
+  transform: scale(1.1);
+}
+.card img:hover + div{
+  transform: scale(1.2);
+  
+}
+.tag{
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  height: 3.5rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  background: var(--bg-tag);
+  font-size: var(--fs-tag);
+  line-height: var(--lh-tag);
+  font-weight: var(--fw-geral);
+  color: var(--tc-tag);
+  padding: 0 2.3rem;
+  border-radius: 2rem;
+  animation: topdown 700ms 350ms backwards;
+}
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes downtop{
+  0%{
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
